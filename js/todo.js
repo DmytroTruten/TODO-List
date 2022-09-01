@@ -3,17 +3,26 @@ let todo2 = "Wash car";
 let todo3 = "Make dinner";
 let clickme = "Click Me"
 
-let todos = ["Get groceries", "Wash car", "Make dinner"]
+const todos = ["Get groceries", "Wash car", "Make dinner"]
 todos.push('Another todo')
 
-todos.forEach(function(todoTitle) {
-  let element = document.createElement('div');
-  element.innerText = todoTitle;
-  document.body.appendChild(element);
-})
+render()
 
 function addNewTodo(){
-  let textbox = document.getElementById('todo-title')
-  let title = textbox.value;
+  const textbox = document.getElementById('todo-title')
+  const title = textbox.value;
   todos.push(title)
+  render()
+}
+
+function render() {
+  //reset list
+  document.getElementById('todo-list').innerHTML = ''
+
+  todos.forEach(function(todoTitle) {
+    const todoList = document.getElementById('todo-list')
+    const element = document.createElement('div');
+    element.innerText = todoTitle;
+    todoList.appendChild(element);
+  })
 }
