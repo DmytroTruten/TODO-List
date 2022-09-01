@@ -1,10 +1,4 @@
-let todo1 = "Get groceries";
-let todo2 = "Wash car";
-let todo3 = "Make dinner";
-let clickme = "Click Me"
-
 const todos = ["Get groceries", "Wash car", "Make dinner"]
-todos.push('Another todo')
 
 render()
 
