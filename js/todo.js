@@ -1,4 +1,4 @@
-const todos = [{
+let todos = [{
   title: "Get groceries",
   dueDate: "04-09-2022",
   id: 'id1'
@@ -21,7 +21,7 @@ function addNewTodo(){
   const datePicker = document.getElementById('date-picker')
   const dueDate= datePicker.value;
 
-  const id = new Date().getTime();
+  const id = '' + new Date().getTime();
 
 
   todos.push({
@@ -36,8 +36,15 @@ function addNewTodo(){
 function deleteTodo(event) {
   const deleteButton = event.target
   const idToDelete = deleteButton.id
-  todos.filter(function (todo));
-  
+
+  todos = todos.filter(function (todo){
+    if (todo.id === idToDelete) {
+      return false;
+    } else {
+      return true
+    }
+  })
+  render();
 }
 
 function render() {
