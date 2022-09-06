@@ -36,6 +36,7 @@ function addNewTodo(){
 function deleteTodo(event) {
   const deleteButton = event.target
   const idToDelete = deleteButton.id
+  todos.filter(function (todo));
   
 }
 
