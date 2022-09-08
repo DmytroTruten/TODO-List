@@ -37,6 +37,14 @@ function removeToDo(idToDelete) {
   })
 }
 
+function toggleTodo(todoId, checked) {
+  todos.forEach(function(todo){
+    if (todo.id === todoId) {
+      todo.isDone = checked
+    }
+  })
+}
+
 function addNewTodo(){
   const textbox = document.getElementById('todo-title')
   const title = textbox.value;
@@ -57,14 +65,40 @@ function deleteTodo(event) {
   render();
 }
 
+function checkTodo(event) {
+  const checkbox = event.target
+
+  const todoId = checkbox.dataset.todoId
+  const checked = checkbox.checked
+
+  toggleTodo(todoId, checked)
+  render()
+}
+
 function render() {
   //reset list
   document.getElementById('todo-list').innerHTML = ''
+
+  
 
   todos.forEach(function(todo) {
     
     const element = document.createElement('div');
     element.innerText = todo.title + ' ' + todo.dueDate;
+
+    const checkbox = document.createElement('input')
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.onchange = checkTodo;
+    checkbox.dataset.todoId = todo.id
+    if (todo.isDone === true) {
+      checkbox.checked = true
+    } else {
+      checkbox.checked = false
+    }
+    element.prepend(checkbox)
+    
+    
+   
 
     const deleteButton = document.createElement('button')
     deleteButton.innerText = 'Delete';
