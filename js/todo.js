@@ -14,6 +14,29 @@ let todos = [{
 
 render()
 
+//Creates todo
+function createToDo(title, dueDate){
+  const id = '' + new Date().getTime();
+
+  todos.push({
+    title: title,
+    dueDate: dueDate,
+    id: id
+  })
+
+}
+
+//Deletes todo
+function removeToDo(idToDelete) {
+  todos = todos.filter(function (todo){
+    if (todo.id === idToDelete) {
+      return false;
+    } else {
+      return true
+    }
+  })
+}
+
 function addNewTodo(){
   const textbox = document.getElementById('todo-title')
   const title = textbox.value;
@@ -21,14 +44,7 @@ function addNewTodo(){
   const datePicker = document.getElementById('date-picker')
   const dueDate= datePicker.value;
 
-  const id = '' + new Date().getTime();
-
-
-  todos.push({
-    title: title,
-    dueDate: dueDate,
-    id: id
-  })
+  createToDo(title,dueDate)
 
   render()
 }
@@ -37,13 +53,7 @@ function deleteTodo(event) {
   const deleteButton = event.target
   const idToDelete = deleteButton.id
 
-  todos = todos.filter(function (todo){
-    if (todo.id === idToDelete) {
-      return false;
-    } else {
-      return true
-    }
-  })
+  removeToDo(idToDelete)
   render();
 }
 
