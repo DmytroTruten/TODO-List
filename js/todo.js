@@ -1,130 +1,100 @@
-
-//if local storage have todos array - use it
-
+// Model
+// If localstorage has a todos array, then use it
+// Otherwise use the default array.
 let todos;
 
-const savedTodos = JSON.parse(localStorage.getItem('todos'))
-
+// Retrieve localStorage
+const savedTodos = JSON.parse(localStorage.getItem('todos'));
+// Check if it's an array
 if (Array.isArray(savedTodos)) {
-  todos = savedTodos
+  todos = savedTodos;
 } else {
   todos = [{
-    title: "Get groceries",
-    dueDate: "04-09-2022",
+    title: 'Get groceries',
+    dueDate: '2021-10-04',
     id: 'id1'
   }, {
-    title: "Wash car",
-    dueDate:" 04-09-2022",
+    title: 'Wash car',
+    dueDate: '2021-02-03',
     id: 'id2'
   }, {
-    title: "Make dinner",
-    dueDate: "04-09-2022",
+    title: 'Make dinner',
+    dueDate: '2021-03-04',
     id: 'id3'
-  }]
+  }];
 }
 
- 
-render()
-
-//Creates todo
-function createToDo(title, dueDate){
+// Creates a todo
+const createTodo = (title, dueDate) => {
   const id = '' + new Date().getTime();
 
   todos.push({
     title: title,
     dueDate: dueDate,
     id: id
-  })
-  saveTodos()
+  });
+
+  saveTodos();
 }
 
-//Deletes todo
-function removeToDo(idToDelete) {
-  todos = todos.filter(function (todo){
+// Deletes a todo
+const removeTodo = idToDelete => {
+  todos = todos.filter(todo => {
+    // If the id of this todo matches idToDelete, return false
+    // For everything else, return true
     if (todo.id === idToDelete) {
       return false;
     } else {
-      return true
+      return true;
     }
-  })
-  saveTodos()
+  });
+
+  saveTodos();
 }
 
-function saveTodos() {
-  localStorage.setItem('todos', JSON.stringify(todos))
+const saveTodos = () => {
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-function toggleTodo(todoId, checked) {
-  todos.forEach(function(todo){
-    if (todo.id === todoId) {
-      todo.isDone = checked
-    }
-  })
-}
-
-function addNewTodo(){
-  const textbox = document.getElementById('todo-title')
+// Controller
+const addTodo = () => {
+  const textbox = document.getElementById('todo-title');
   const title = textbox.value;
 
-  const datePicker = document.getElementById('date-picker')
-  const dueDate= datePicker.value;
+  const datePicker = document.getElementById('date-picker');
+  const dueDate = datePicker.value;
 
-  createToDo(title,dueDate)
-
-  render()
-}
-
-function deleteTodo(event) {
-  const deleteButton = event.target
-  const idToDelete = deleteButton.id
-
-  removeToDo(idToDelete)
+  createTodo(title, dueDate);
   render();
 }
 
-function checkTodo(event) {
-  const checkbox = event.target
+const deleteTodo = event => {
+  const deleteButton = event.target;
+  const idToDelete = deleteButton.id;
 
-  const todoId = checkbox.dataset.todoId
-  const checked = checkbox.checked
-
-  toggleTodo(todoId, checked)
-  render()
+  removeTodo(idToDelete);
+  render();
 }
 
-function render() {
-  //reset list
-  document.getElementById('todo-list').innerHTML = ''
+// View
+const render = () => {
+  // reset our list
+  document.getElementById('todo-list').innerHTML = '';
 
-  
-
-  todos.forEach(function(todo) {
-    
+  todos.forEach(todo => {
     const element = document.createElement('div');
     element.innerText = todo.title + ' ' + todo.dueDate;
 
-    const checkbox = document.createElement('input')
-    checkbox.setAttribute('type', 'checkbox')
-    checkbox.onchange = checkTodo;
-    checkbox.dataset.todoId = todo.id
-    if (todo.isDone === true) {
-      checkbox.checked = true
-    } else {
-      checkbox.checked = false
-    }
-    element.prepend(checkbox)
-    
-    
-   
-
-    const deleteButton = document.createElement('button')
+    const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Delete';
-    deleteButton.style = 'margin-left: 20px;'
+    deleteButton.style = 'margin-left: 12px';
     deleteButton.onclick = deleteTodo;
-    deleteButton.id = todo.id
-    element.appendChild(deleteButton)
+    deleteButton.id = todo.id;
+    element.appendChild(deleteButton);
 
-    const todoList = document.getElementById('todo-list')
+    const todoList = document.getElementById('todo-list');
     todoList.appendChild(element);
-  })
+  });
 }
+
+render();
