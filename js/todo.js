@@ -1,17 +1,29 @@
-let todos = [{
-  title: "Get groceries",
-  dueDate: "04-09-2022",
-  id: 'id1'
-}, {
-  title: "Wash car",
-  dueDate:" 04-09-2022",
-  id: 'id2'
-}, {
-  title: "Make dinner",
-  dueDate: "04-09-2022",
-  id: 'id3'
-}]
 
+//if local storage have todos array - use it
+
+let todos;
+
+const savedTodos = JSON.parse(localStorage.getItem('todos'))
+
+if (Array.isArray(savedTodos)) {
+  todos = savedTodos
+} else {
+  todos = [{
+    title: "Get groceries",
+    dueDate: "04-09-2022",
+    id: 'id1'
+  }, {
+    title: "Wash car",
+    dueDate:" 04-09-2022",
+    id: 'id2'
+  }, {
+    title: "Make dinner",
+    dueDate: "04-09-2022",
+    id: 'id3'
+  }]
+}
+
+ 
 render()
 
 //Creates todo
@@ -23,7 +35,7 @@ function createToDo(title, dueDate){
     dueDate: dueDate,
     id: id
   })
-
+  saveTodos()
 }
 
 //Deletes todo
@@ -35,6 +47,11 @@ function removeToDo(idToDelete) {
       return true
     }
   })
+  saveTodos()
+}
+
+function saveTodos() {
+  localStorage.setItem('todos', JSON.stringify(todos))
 }
 
 function toggleTodo(todoId, checked) {
