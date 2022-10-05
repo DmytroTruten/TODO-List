@@ -7,14 +7,18 @@ body {
   font-family: Roboto;
   margin: 0px;
   min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
 }
 
 .container {
   border: 1px solid black;
   height: fit-content;
   display: flex;
-  justify-content: center ;
+  justify-content: center;
   flex-direction: column;
+  width: max-content;
 }
 
 .upper-container {
@@ -25,7 +29,7 @@ body {
 
 .bottom-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border: 1px solid black;
 }
