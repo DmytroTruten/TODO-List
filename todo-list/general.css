@@ -1,11 +1,19 @@
+html {
+  height: 100%;
+}
+
 body {
-  background-color: aquamarine;
+  background: aquamarine;
+  font-family: Roboto;
+  margin: 0px;
+  min-height: 100%;
 }
 
 .container {
-  
   border: 1px solid black;
-  height: 600px;
+  height: fit-content;
+  display: flex;
+  justify-content: center ;
   flex-direction: column;
 }
 
@@ -13,7 +21,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
 }
 
 .bottom-container {

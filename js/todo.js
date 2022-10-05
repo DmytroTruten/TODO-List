@@ -88,7 +88,6 @@ const render = () => {
 
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Delete';
-    deleteButton.style = 'margin-left: 12px';
     deleteButton.onclick = deleteTodo;
     deleteButton.id = todo.id;
     element.appendChild(deleteButton);
