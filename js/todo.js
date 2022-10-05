@@ -60,12 +60,13 @@ const saveTodos = () => {
 const addTodo = () => {
   const textbox = document.getElementById('todo-title');
   const title = textbox.value;
+  if(title){
+    const datePicker = document.getElementById('date-picker');
+    const dueDate = datePicker.value;
 
-  const datePicker = document.getElementById('date-picker');
-  const dueDate = datePicker.value;
-
-  createTodo(title, dueDate);
-  render();
+    createTodo(title, dueDate);
+    render();
+  }
 }
 
 const deleteTodo = event => {

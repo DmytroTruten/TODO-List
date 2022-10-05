@@ -3,18 +3,22 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
   border: 1px solid black;
   height: 600px;
   flex-direction: column;
 }
 
 .upper-container {
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
 }
 
 .bottom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
 }

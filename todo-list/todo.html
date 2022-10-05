@@ -5,16 +5,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="general.css">
+  <link rel="stylesheet" href="input.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 
 <body>
   <div class="container">
     <div class="upper-container">
-      <input id="todo-title" type="text"/>
+      <input id="todo-title" type="text" placeholder="Enter your todo" />
       <input id="date-picker" type="date">
-      <button onclick="addTodo()">Add new todo</button>
+      <button class="add-button" onclick="addTodo()">Add new todo</button>
     </div>
     <div class="bottom-container">
       <div id="todo-list"></div>
