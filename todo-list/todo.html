@@ -5,15 +5,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 
 <body>
-  
-  <input id="todo-title" type="text"/>
-  <input id="date-picker" type="date">
-  <button onclick="addNewTodo()">Add new todo</button>
-  <div id="todo-list"></div>
+  <div class="container">
+    <div class="upper-container">
+      <input id="todo-title" type="text"/>
+      <input id="date-picker" type="date">
+      <button onclick="addTodo()">Add new todo</button>
+    </div>
+    <div class="bottom-container">
+      <div id="todo-list"></div>
+    </div>
+  </div>
   <script src="../js/todo.js"></script>
 </body>
 
