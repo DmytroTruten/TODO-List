@@ -9,27 +9,35 @@ body {
   min-height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center ;
+  position: relative;
 }
 
 .container {
   border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   height: fit-content;
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: max-content;
+  position: absolute;
+  top: 50px;
 }
 
 .upper-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(204, 255, 162);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .bottom-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid black;
+  border-top: 1px solid gray;
+  background-color: antiquewhite;
 }

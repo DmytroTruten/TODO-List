@@ -63,7 +63,6 @@ const addTodo = () => {
   if(title){
     const datePicker = document.getElementById('date-picker');
     const dueDate = datePicker.value;
-
     createTodo(title, dueDate);
     render();
   }
@@ -72,7 +71,6 @@ const addTodo = () => {
 const deleteTodo = event => {
   const deleteButton = event.target;
   const idToDelete = deleteButton.id;
-
   removeTodo(idToDelete);
   render();
 }
