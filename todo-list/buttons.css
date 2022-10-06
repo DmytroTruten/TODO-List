@@ -38,7 +38,8 @@
 }
 
 @media (max-width: 480px) {
-  .add-button {
+  .add-button,
+  #todo-list button {
     width: 85%;
     margin-top: 10px;
     margin-bottom: 20px;
