@@ -36,3 +36,11 @@
   box-shadow: none;
   background-color: rgb(252, 115, 115);
 }
+
+@media (max-width: 480px) {
+  .add-button {
+    width: 85%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
