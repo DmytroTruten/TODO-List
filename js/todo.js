@@ -81,9 +81,15 @@ const render = () => {
   document.getElementById('todo-list').innerHTML = '';
 
   todos.forEach(todo => {
-    const element = document.createElement('div');
-    element.innerText = todo.title + ' ' + todo.dueDate;
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute("type", 'checkbox');
+    checkbox.classList.toggle('check')
 
+    const element = document.createElement('div');
+    
+    element.innerText = todo.title + ' ' + todo.dueDate;
+    element.prepend(checkbox)
+    
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Delete';
     deleteButton.onclick = deleteTodo;

@@ -12,3 +12,8 @@
   font-size: 26px;
   width: max-content;
 }
+
+.check {
+  width: 20px;
+  height: 20px;
+}
