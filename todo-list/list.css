@@ -34,3 +34,20 @@
     font-size: 22px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #todo-list div {
+    justify-content: space-between;
+    height: auto;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1025px){
+  #todo-list div {
+    justify-content: space-between;
+    height: auto;
+    font-size: 22px;
+  }
+}
+
