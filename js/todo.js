@@ -60,7 +60,7 @@ const saveTodos = () => {
 const addTodo = () => {
   const textbox = document.getElementById('todo-title');
   const title = textbox.value;
-  if(title){
+  if(title.includes(' ')) {
     const datePicker = document.getElementById('date-picker');
     const dueDate = datePicker.value;
     createTodo(title, dueDate);

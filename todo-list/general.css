@@ -50,6 +50,10 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .bottom-container {
+
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -57,7 +61,5 @@ body {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
   }
-  .bottom-container {
-    justify-content: center;
-  }
+
 }
