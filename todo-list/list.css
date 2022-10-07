@@ -18,7 +18,11 @@
 
 @media (max-width: 480px) {
   #todo-list div {
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    height: auto;
+    font-size: 15px;
   }
 }
 

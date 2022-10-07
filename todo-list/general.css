@@ -51,8 +51,8 @@ body {
     flex-direction: column;
   }
 
-  .bottom-container {
-
+  .bottom-container #todo-list {
+    width: 100%;
   }
 }
 
