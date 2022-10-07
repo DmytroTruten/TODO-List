@@ -9,6 +9,7 @@
   transition: all ease-in 0.1s;
   margin: 0px 10px;
   cursor: pointer;
+  position: relative;
 }
 
 .add-button:active {
@@ -35,6 +36,34 @@
   transform: translateY(5px);
   box-shadow: none;
   background-color: rgb(252, 115, 115);
+}
+
+.color-picker {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: -1px;
+  right: -30px;
+  height: 102%;
+  width: 50px;
+  font-weight: 500;
+  z-index: -1;
+  background: linear-gradient(#e66465, #9198e5);
+  border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.color-picker:active {
+  background: linear-gradient(#6e6e6e, #9198e5);
+}
+
+.color-text-container {
+  width: 10px;
+  overflow-wrap: break-word;
+  line-height: 11px;
+  color: white;
 }
 
 @media (max-width: 480px) {

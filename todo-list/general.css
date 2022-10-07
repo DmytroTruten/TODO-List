@@ -30,6 +30,7 @@ body {
   background-color: rgb(204, 255, 162);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  position: relative;
 }
 
 .bottom-container {
