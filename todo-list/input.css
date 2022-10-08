@@ -50,9 +50,20 @@ input:focus {
 
 @media (min-width: 769px) {
   #todo-title {
-    width: 50%;
+    width: 55%;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #todo-title {
+    width: 55%;
+    grid-area: 1 / 1 / span 1 / span 2;
+  }
+  #date-picker {
+    grid-area: 1 / 2 / span 1 / span 1
+  }
+}
+
 
 @media (min-width: 1025px) {
   #todo-title {
