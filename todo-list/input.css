@@ -47,8 +47,18 @@ input:focus {
     grid-area: 1 / 3 / span 1 / span 2
   }
 }
+
 @media (min-width: 769px) {
   #todo-title {
     width: 50%;
+  }
+}
+
+@media (min-width: 1025px) {
+  #todo-title {
+    grid-area: 1 / 1 / span 1 / span 2;
+  }
+  #date-picker {
+    grid-area: 1 / 2 / span 1 / span 1
   }
 }

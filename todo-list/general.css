@@ -24,8 +24,8 @@ body {
 }
 
 .upper-container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template: 1fr / 2fr 1fr 1fr;
   align-items: center;
   background-color: rgb(204, 255, 162);
   border-top-right-radius: 10px;
@@ -73,6 +73,11 @@ body {
   .bottom-container #todo-list {
     width: 85%;
   }
+  .reveal-colors {
+    height: 100px;
+    display: grid;
+    grid-template: 1fr 1fr / 2fr 1fr 1fr;
+  }  
 }
 
 

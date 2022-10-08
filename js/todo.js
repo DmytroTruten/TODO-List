@@ -77,14 +77,15 @@ const deleteTodo = event => {
 
 const toggleColor = () => {
   const toggleButton = document.getElementById('color-toggle');
+  const upperContainer = document.getElementById('upper');
   if(toggleButton.value === 'off') {
+    upperContainer.classList.toggle("reveal-colors");
     toggleButton.style.backgroundColor = 'red';
     toggleButton.value = 'on'
-    console.log(toggleButton.value)
   } else {
-    toggleButton.style.backgroundColor = 'green';
-    toggleButton.value = 'off'
-    console.log(toggleButton.value)
+    upperContainer.classList.remove("reveal-colors")
+    toggleButton.style.backgroundColor = 'white';
+    toggleButton.value = 'off';
 }}
 
 // View
