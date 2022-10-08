@@ -39,6 +39,7 @@ body {
   align-items: center;
   border-top: 1px solid gray;
   background-color: antiquewhite;
+  position: relative;
 }
 
 @media (max-width: 480px) {

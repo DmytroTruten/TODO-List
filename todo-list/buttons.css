@@ -40,30 +40,30 @@
 
 .color-picker {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   position: absolute;
-  top: -1px;
-  right: -30px;
-  height: 102%;
+  top: 0px;
+  left: 10px;
   width: 50px;
-  font-weight: 500;
-  z-index: -1;
-  background: linear-gradient(#e66465, #9198e5);
-  border-radius: 5px;
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .color-picker:active {
-  background: linear-gradient(#6e6e6e, #9198e5);
+  
+}
+.color-picker:hover {
+  
 }
 
-.color-text-container {
-  width: 10px;
-  overflow-wrap: break-word;
-  line-height: 11px;
-  color: white;
+.arrow-down {
+  height: 20px;
 }
 
 @media (max-width: 480px) {
