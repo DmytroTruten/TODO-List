@@ -75,6 +75,18 @@ const deleteTodo = event => {
   render();
 }
 
+const toggleColor = () => {
+  const toggleButton = document.getElementById('color-toggle');
+  if(toggleButton.value === 'off') {
+    toggleButton.style.backgroundColor = 'red';
+    toggleButton.value = 'on'
+    console.log(toggleButton.value)
+  } else {
+    toggleButton.style.backgroundColor = 'green';
+    toggleButton.value = 'off'
+    console.log(toggleButton.value)
+}}
+
 // View
 const render = () => {
   // reset our list
