@@ -75,21 +75,25 @@ const deleteTodo = event => {
   render();
 }
 
+const upperContainer = document.getElementById('upper');
+
 const toggleColor = () => {
   const toggleButton = document.getElementById('color-toggle');
-  const upperContainer = document.getElementById('upper');
   const colorPalette = document.getElementById('color-palette');
   if(toggleButton.value === 'off') {
     upperContainer.classList.toggle("reveal-colors");
-    toggleButton.style.backgroundColor = 'red';
     toggleButton.value = 'on'
     colorPalette.style.display = "grid";
   } else {
     upperContainer.classList.remove("reveal-colors")
-    toggleButton.style.backgroundColor = 'white';
     toggleButton.value = 'off';
     colorPalette.style.display = "none";
 }}
+
+const toggleRed = () => {
+  const red = document.getElementById('red');
+  upperContainer.classList.toggle('upper-red');
+}
 
 // View
 const render = () => {

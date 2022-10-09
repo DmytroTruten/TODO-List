@@ -77,6 +77,9 @@ body {
     height: 100px;
     display: grid;
     grid-template: 1fr 1fr / 2fr 1fr 1fr;
+  }
+  .upper-red {
+    background-color: red;
   }  
 }
 
