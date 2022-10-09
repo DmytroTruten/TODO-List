@@ -80,6 +80,12 @@ body {
   }
   .upper-red {
     background-color: red;
+  }
+  .upper-blue {
+    background-color: blue;
+  }  
+  .upper-green {
+    background-color: green;
   }  
 }
 

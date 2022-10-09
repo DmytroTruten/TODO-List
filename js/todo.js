@@ -77,7 +77,7 @@ const deleteTodo = event => {
 
 const upperContainer = document.getElementById('upper');
 
-const toggleColor = () => {
+const toggleColorContainer = () => {
   const toggleButton = document.getElementById('color-toggle');
   const colorPalette = document.getElementById('color-palette');
   if(toggleButton.value === 'off') {
@@ -90,9 +90,14 @@ const toggleColor = () => {
     colorPalette.style.display = "none";
 }}
 
-const toggleRed = () => {
-  const red = document.getElementById('red');
-  upperContainer.classList.toggle('upper-red');
+const toggleColors = (event) => {
+  if(event === red) {
+    upperContainer.classList.toggle('upper-red');
+  } else if(event === blue) {
+    upperContainer.classList.toggle('upper-blue');
+  } else {
+    upperContainer.classList.toggle('upper-green');
+  }
 }
 
 // View
