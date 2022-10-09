@@ -27,6 +27,27 @@ input:focus {
   color: gray;
 }
 
+.color-palette {
+  border: 1px solid black;
+  display: grid;
+  grid-template: 20px / 20px 20px 20px ;
+  margin-left: 10px;
+  column-gap: 10px;
+  background-color: white;
+}
+.red {
+  background-color: red;
+  border: 1px solid black;
+}
+.blue {
+  background-color: blue;
+  border: 1px solid black;
+}
+.green {
+  background-color: green;
+  border: 1px solid black;
+}
+
 @media (max-width: 480px){
   #todo-title,
   #date-picker {
