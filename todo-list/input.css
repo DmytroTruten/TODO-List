@@ -78,21 +78,32 @@ input:focus {
   }
   .color-palette {
     border: var(--color-palette-border);
-    grid-template: 20px / 20px 20px 20px ;
+    grid-template: 20px / repeat(6, 1fr);
     margin-left: 10px;
-    column-gap: 10px;
     background-color: white;
+    cursor: pointer;
+    border-radius: 30px;
   }
-  .red {
-    background-color: red;
-    border: var(--color-palette-border);
+  .first {
+    background-color: #f9d1d1;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
   }
-  .blue {
-    background-color: blue;
-    border: var(--color-palette-border);
+  .second {
+    background-color: #ffa4b6;
   }
-  .green {
-    background-color: green;
-    border: var(--color-palette-border);
+  .third {
+    background-color: #f765a3;
+  }
+  .fourth {
+    background-color: #a155b9;
+  }
+  .fifth {
+    background-color: #165baa;
+  }
+  .sixth {
+    background-color: #0b1354;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 }

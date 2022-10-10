@@ -99,13 +99,22 @@ const toggleColorContainer = () => {
 const colorButtons = colorPalette.querySelectorAll('div');
 colorButtons.forEach(function(div){
   div.addEventListener('click', function(event) {
-    if(event.target.id === 'red') {
+    if(event.target.id === '#f9d1d1') {
       upperContainer.style.backgroundColor = event.target.id;
     }
-    if(event.target.id === 'blue') {
+    if(event.target.id === '#ffa4b6') {
       upperContainer.style.backgroundColor = event.target.id;
     }
-    if(event.target.id === 'green') {
+    if(event.target.id === '#f765a3') {
+      upperContainer.style.backgroundColor = event.target.id;
+    }
+    if(event.target.id === '#a155b9') {
+      upperContainer.style.backgroundColor = event.target.id;
+    }
+    if(event.target.id === '#165baa') {
+      upperContainer.style.backgroundColor = event.target.id;
+    }
+    if(event.target.id === '#0b1354') {
       upperContainer.style.backgroundColor = event.target.id;
     }
   })
