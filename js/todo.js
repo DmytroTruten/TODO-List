@@ -96,15 +96,20 @@ const toggleColorContainer = () => {
   }
 };
 
-const toggleColors = (event) => {
-  if (event === red) {
-    upperContainer.classList.toggle("upper-red");
-  } else if (event === blue) {
-    upperContainer.classList.toggle("upper-blue");
-  } else {
-    upperContainer.classList.toggle("upper-green");
-  }
-};
+const colorButtons = colorPalette.querySelectorAll('div');
+colorButtons.forEach(function(div){
+  div.addEventListener('click', function(event) {
+    if(event.target.id === 'red') {
+      upperContainer.style.backgroundColor = event.target.id;
+    }
+    if(event.target.id === 'blue') {
+      upperContainer.style.backgroundColor = event.target.id;
+    }
+    if(event.target.id === 'green') {
+      upperContainer.style.backgroundColor = event.target.id;
+    }
+  })
+})
 
 // View
 const render = () => {

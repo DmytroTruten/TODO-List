@@ -78,15 +78,6 @@ body {
     display: grid;
     grid-template: 1fr 1fr / 2fr 1fr 1fr;
   }
-  .upper-red {
-    background-color: red;
-  }
-  .upper-blue {
-    background-color: blue;
-  }  
-  .upper-green {
-    background-color: green;
-  }  
 }
 
 
