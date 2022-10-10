@@ -75,6 +75,7 @@ body {
   }
   .reveal-colors {
     height: 100px;
+    padding-bottom: 10px;
     display: grid;
     grid-template: 1fr 1fr / 2fr 1fr 1fr;
   }
