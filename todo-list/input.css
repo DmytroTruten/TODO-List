@@ -86,8 +86,8 @@ input:focus {
   }
   .first {
     background-color: #f9d1d1;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
   }
   .second {
     background-color: #ffa4b6;
@@ -103,7 +103,7 @@ input:focus {
   }
   .sixth {
     background-color: #0b1354;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 }
