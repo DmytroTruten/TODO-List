@@ -45,7 +45,6 @@
   top: 0px;
   left: 5px;
   /* width: 50px; */
-  height: auto;
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
@@ -82,5 +81,9 @@
 @media (min-width: 481px) and (max-width: 768px) {
   .add-button {
     grid-area: 2 / 2 / span 1 / span 2;
+  }
+  .color-toggle {
+    left: 10px;
+    width: 8%;
   }
 }

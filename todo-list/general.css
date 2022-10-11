@@ -15,7 +15,6 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: 100%;
   position: absolute;
 }
 
@@ -51,6 +50,7 @@ body {
   .container {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    max-width: 100%;
   }
   .upper-container {
     border-top-right-radius: 8px;
@@ -60,7 +60,9 @@ body {
 
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
-    top: 30px
+    top: 30px;
+    max-width: 90%;
+    border: 1px solid black;
   }
   .upper-container {
     display: grid;
