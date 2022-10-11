@@ -37,13 +37,12 @@ input:focus {
     width: 80%;
     margin: 10px;
   }
+  ::placeholder {
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  #todo-title,
-  #date-picker {
-    width: 85%;
-  }
   #todo-title {
     grid-area: 1 / 1 / span 1 / span 2
   }
