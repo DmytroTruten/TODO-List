@@ -60,6 +60,10 @@ const saveTodos = () => {
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
+const saveColor = () => {
+  localStorage.setItem("color", upperContainer.style.backgroundColor);
+}
+
 // Controller
 const addTodo = () => {
   const textbox = document.getElementById("todo-title");
@@ -96,26 +100,35 @@ const toggleColorContainer = () => {
   }
 };
 
+const savedColor = localStorage.getItem("color");
+upperContainer.style.backgroundColor = savedColor;
+
 const colorButtons = colorPalette.querySelectorAll('div');
 colorButtons.forEach(function(div){
   div.addEventListener('click', function(event) {
     if(event.target.id === '#f9d1d1') {
       upperContainer.style.backgroundColor = event.target.id;
+      saveColor()
     }
     if(event.target.id === '#ffa4b6') {
       upperContainer.style.backgroundColor = event.target.id;
+      saveColor()
     }
     if(event.target.id === '#f765a3') {
       upperContainer.style.backgroundColor = event.target.id;
+      saveColor()
     }
     if(event.target.id === '#a155b9') {
       upperContainer.style.backgroundColor = event.target.id;
+      saveColor()
     }
     if(event.target.id === '#165baa') {
       upperContainer.style.backgroundColor = event.target.id;
+      saveColor()
     }
     if(event.target.id === '#0b1354') {
       upperContainer.style.backgroundColor = event.target.id;
+      saveColor()
     }
   })
 })
