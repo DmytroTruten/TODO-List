@@ -51,6 +51,7 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     max-width: 100%;
+    top: 30px;
   }
   .upper-container {
     border-top-right-radius: 8px;
@@ -60,7 +61,6 @@ body {
 
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
-    top: 30px;
     max-width: 90%;
     border: 1px solid black;
   }
@@ -70,6 +70,12 @@ body {
   }
   .bottom-container #todo-list {
     width: 100%;
+  }
+  .reveal-colors {
+    height: 200px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
   }
 }
 

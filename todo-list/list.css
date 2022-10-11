@@ -22,7 +22,12 @@
     overflow-wrap: break-word;
     height: auto;
     font-size: 15px;
-    margin: 20px 10px 10px 10px;
+  }
+}
+
+@media (min-width: 0px) {
+  #todo-list div {
+    margin: 18px 10px 10px 10px;
   }
 }
 
@@ -32,7 +37,6 @@
     overflow-wrap: break-word;
     height: auto;
     font-size: 22px;
-    margin: 18px 10px 10px 10px;
   }
 }
 

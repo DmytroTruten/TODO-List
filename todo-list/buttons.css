@@ -87,3 +87,13 @@
     width: 8%;
   }
 }
+
+@media (min-width: 769px) {
+  .color-toggle {
+    left: 8px;
+    width: 7%;
+  }
+  .arrow-down {
+    height: 18px;
+  }
+}
