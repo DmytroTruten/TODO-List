@@ -44,6 +44,9 @@ body {
   .bottom-container #todo-list {
     width: 100%;
   }
+  .reveal-colors {
+    padding-bottom: 10px;
+  }
 }
 
 @media (min-width: 481px) {
@@ -52,6 +55,7 @@ body {
     border-top-right-radius: 10px;
     max-width: 100%;
     top: 30px;
+    border: 1px solid black;
   }
   .upper-container {
     border-top-right-radius: 8px;
@@ -62,7 +66,6 @@ body {
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
     max-width: 90%;
-    border: 1px solid black;
   }
   .upper-container {
     display: grid;
