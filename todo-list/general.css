@@ -1,6 +1,6 @@
 
 body {
-  background: linear-gradient(aquamarine, blue);
+  background: linear-gradient(aquamarine, rgb(0, 102, 255));
   font-family: Roboto;
   margin: 0px;
   min-height: 100%;
@@ -14,6 +14,8 @@ body {
 
 .logo {
   height: max-content;
+  display: flex;
+  justify-content: center;
 }
 
 .logo p {
