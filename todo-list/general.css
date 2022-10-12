@@ -1,6 +1,6 @@
 
 body {
-  background: aquamarine;
+  background: linear-gradient(aquamarine, blue);
   font-family: Roboto;
   margin: 0px;
   min-height: 100%;
@@ -31,7 +31,7 @@ body {
   justify-content: center;
   align-items: center;
   border-top: 1px solid gray;
-  background-color: antiquewhite;
+  background-color: whitesmoke;
   position: relative;
 }
 
@@ -54,8 +54,7 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     max-width: 100%;
-    top: 30px;
-    border: 1px solid black;
+    top: 100px;
   }
   .upper-container {
     border-top-right-radius: 8px;
