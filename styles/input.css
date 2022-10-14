@@ -34,7 +34,7 @@ input:focus {
 @media (min-width: 0px){
   .color-palette {
     border: var(--color-palette-border);
-    grid-template: 20px / repeat(6, 1fr);
+    grid-template: 20px / repeat(5, 1fr);
     background-color: white;
     cursor: pointer;
     border-radius: 30px;
@@ -55,9 +55,6 @@ input:focus {
   }
   .fifth {
     background-color: #165baa;
-  }
-  .sixth {
-    background-color: #0b1354;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
   }

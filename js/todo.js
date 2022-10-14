@@ -72,6 +72,9 @@ const addTodo = () => {
     const datePicker = document.getElementById("date-picker");
     const dueDate = datePicker.value;
     createTodo(title, dueDate);
+    if(addTodo) {
+      textbox.value = '';
+    }
     render();
   }
 };
@@ -110,8 +113,7 @@ colorButtons.forEach(function(div){
     || event.target.id === '#ffa4b6' 
     || event.target.id === '#f765a3'
     || event.target.id === '#a155b9'
-    || event.target.id === '#165baa'
-    || event.target.id === '#0b1354') {
+    || event.target.id === '#165baa') {
       upperContainer.style.backgroundColor = event.target.id;
       saveColor()
     }
