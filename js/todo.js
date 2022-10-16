@@ -109,7 +109,7 @@ upperContainer.style.backgroundColor = savedColor;
 const colorButtons = colorPalette.querySelectorAll('div');
 colorButtons.forEach(function(div){
   div.addEventListener('click', function(event) {
-    if(event.target.id === '#f9d1d1' 
+    if(event.target.id === '#ffebee' 
     || event.target.id === '#ffa4b6' 
     || event.target.id === '#f765a3'
     || event.target.id === '#a155b9'

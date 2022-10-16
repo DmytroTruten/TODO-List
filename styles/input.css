@@ -34,27 +34,42 @@ input:focus {
 @media (min-width: 0px){
   .color-palette {
     border: var(--color-palette-border);
-    grid-template: 20px / repeat(5, 1fr);
+    grid-template: 20px / repeat(10, 1fr);
     background-color: white;
     cursor: pointer;
     border-radius: 30px;
   }
   .first {
-    background-color: #f9d1d1;
+    background-color: #fce4ec;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }
   .second {
-    background-color: #ffa4b6;
+    background-color: #f8bbd0;
   }
   .third {
-    background-color: #f765a3;
+    background-color: #f48fb1;
   }
   .fourth {
-    background-color: #a155b9;
+    background-color: #f06292;
   }
   .fifth {
-    background-color: #165baa;
+    background-color: #ec407a;
+  }
+  .sixth {
+    background-color: #e91e63;
+  }
+  .seventh {
+    background-color: #d81b60;
+  }
+  .eighth {
+    background-color: #c2195b;
+  }
+  .nineth {
+    background-color: #ad1457;
+  }
+  .tenth {
+    background-color: #880e4f;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
   }
