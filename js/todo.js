@@ -109,11 +109,16 @@ upperContainer.style.backgroundColor = savedColor;
 const colorButtons = colorPalette.querySelectorAll('div');
 colorButtons.forEach(function(div){
   div.addEventListener('click', function(event) {
-    if(event.target.id === '#ffebee' 
-    || event.target.id === '#ffa4b6' 
-    || event.target.id === '#f765a3'
-    || event.target.id === '#a155b9'
-    || event.target.id === '#165baa') {
+    if(event.target.id === '#fce4ec' 
+    || event.target.id === '#f8bbd0' 
+    || event.target.id === '#f48fb1'
+    || event.target.id === '#f06292'
+    || event.target.id === '#ec407a'
+    || event.target.id === '#e91e63' 
+    || event.target.id === '#d81b60'
+    || event.target.id === '#c2195b'
+    || event.target.id === '#ad1457'
+    || event.target.id === '#880e4f') {
       upperContainer.style.backgroundColor = event.target.id;
       saveColor()
     }

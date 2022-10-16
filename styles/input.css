@@ -33,7 +33,6 @@ input:focus {
 
 @media (min-width: 0px){
   .color-palette {
-    border: var(--color-palette-border);
     grid-template: 20px / repeat(10, 1fr);
     background-color: white;
     cursor: pointer;
@@ -73,6 +72,19 @@ input:focus {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
   }
+}
+
+.first, 
+.second, 
+.third, 
+.fourth,
+.fifth,
+.sixth,
+.seventh,
+.eighth,
+.nineth,
+.tenth {
+  border: var(--color-palette-border);
 }
 
 @media (min-width: 481px){
