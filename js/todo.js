@@ -109,16 +109,16 @@ upperContainer.style.backgroundColor = savedColor;
 const colorButtons = colorPalette.querySelectorAll('div');
 colorButtons.forEach(function(div){
   div.addEventListener('click', function(event) {
-    if(event.target.id === '#fce4ec' 
-    || event.target.id === '#f8bbd0' 
-    || event.target.id === '#f48fb1'
-    || event.target.id === '#f06292'
-    || event.target.id === '#ec407a'
-    || event.target.id === '#e91e63' 
-    || event.target.id === '#d81b60'
-    || event.target.id === '#c2195b'
-    || event.target.id === '#ad1457'
-    || event.target.id === '#880e4f') {
+    if(event.target.id === '#fff100' 
+    || event.target.id === '#ff8c00' 
+    || event.target.id === '#e81123'
+    || event.target.id === '#ec008c'
+    || event.target.id === '#68217a'
+    || event.target.id === '#00188f' 
+    || event.target.id === '#00bcf2'
+    || event.target.id === '#00b294'
+    || event.target.id === '#009e49'
+    || event.target.id === '#bad80a') {
       upperContainer.style.backgroundColor = event.target.id;
       saveColor()
     }

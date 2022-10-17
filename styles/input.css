@@ -38,37 +38,38 @@ input:focus {
     cursor: pointer;
     border-radius: 30px;
   }
+  
   .first {
-    background-color: #fce4ec;
+    background-color: #fff100;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
   }
   .second {
-    background-color: #f8bbd0;
+    background-color: #ff8c00;
   }
   .third {
-    background-color: #f48fb1;
+    background-color: #e81123;
   }
   .fourth {
-    background-color: #f06292;
+    background-color: #ec008c;
   }
   .fifth {
-    background-color: #ec407a;
+    background-color: #68217a;
   }
   .sixth {
-    background-color: #e91e63;
+    background-color: #00188f;
   }
   .seventh {
-    background-color: #d81b60;
+    background-color: #00bcf2;
   }
   .eighth {
-    background-color: #c2195b;
+    background-color: #00b294;
   }
   .nineth {
-    background-color: #ad1457;
+    background-color: #009e49;
   }
   .tenth {
-    background-color: #880e4f;
+    background-color: #bad80a;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
   }
