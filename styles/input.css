@@ -1,7 +1,3 @@
-:root {
-  --color-palette-border: 1px solid black;
-}
-
 input {
   margin: 10px;
 }
@@ -30,69 +26,23 @@ input:focus {
   padding: 0px 10px;
   color: gray;
 }
-
-@media (min-width: 0px){
-  .color-palette {
-    grid-template: 20px / repeat(10, 1fr);
-    background-color: white;
-    cursor: pointer;
-    border-radius: 30px;
-  }
-  
-  .first {
-    background-color: #fff100;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-  .second {
-    background-color: #ff8c00;
-  }
-  .third {
-    background-color: #e81123;
-  }
-  .fourth {
-    background-color: #ec008c;
-  }
-  .fifth {
-    background-color: #68217a;
-  }
-  .sixth {
-    background-color: #00188f;
-  }
-  .seventh {
-    background-color: #00bcf2;
-  }
-  .eighth {
-    background-color: #00b294;
-  }
-  .nineth {
-    background-color: #009e49;
-  }
-  .tenth {
-    background-color: #bad80a;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
+#color-picker {
+  margin: 0;
+  width: 100%;
 }
 
-.first, 
-.second, 
-.third, 
-.fourth,
-.fifth,
-.sixth,
-.seventh,
-.eighth,
-.nineth,
-.tenth {
-  border: var(--color-palette-border);
+.color-picker-container {
+  margin-left: 10px;
+}
+
+@media (min-width: 0px) {
+  .color-picker-container {
+    border: 1px solid black;
+  }
 }
 
 @media (min-width: 481px){
-  .color-palette {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
+
 }
 
 
@@ -105,9 +55,6 @@ input:focus {
   ::placeholder {
     font-size: 15px;
   }
-  .color-palette {
-    width: 90%;
-  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -116,11 +63,6 @@ input:focus {
   }
   #date-picker {
     grid-area: 1 / 3 / span 1 / span 2
-  }
-  .color-palette {
-    grid-area: 3 / 1 / span 1 / span 4;
-    margin-right: 10px;
-    margin-left: 10px;
   }
 }
 

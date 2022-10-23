@@ -62,6 +62,7 @@ const saveTodos = () => {
 
 const saveColor = () => {
   localStorage.setItem("color", upperContainer.style.backgroundColor);
+  localStorage.setItem("color-picker", colorPicker.value);
 };
 
 // Controller
@@ -89,6 +90,8 @@ const deleteTodo = (event) => {
 const upperContainer = document.getElementById("upper");
 const toggleButton = document.getElementById("color-toggle");
 const colorPicker = document.getElementById("color-picker");
+const colorPickerContainer = document.getElementById("color-picker-container");
+colorPickerContainer.style.display = 'none';
 
 colorPicker.addEventListener("input", () => {
   let color = colorPicker.value;
@@ -100,14 +103,19 @@ const toggleColorContainer = () => {
   if (toggleButton.value === "off") {
     upperContainer.classList.toggle("reveal-colors");
     toggleButton.value = "on";
+    colorPickerContainer.style.display = 'block'
+
   } else {
     upperContainer.classList.remove("reveal-colors");
     toggleButton.value = "off";
+    colorPickerContainer.style.display = 'none';
   }
 };
 
 const savedColor = localStorage.getItem("color");
+const savedColorPicker = localStorage.getItem("color-picker");
 upperContainer.style.backgroundColor = savedColor;
+colorPicker.value = savedColorPicker;
 
 // View
 const render = () => {
