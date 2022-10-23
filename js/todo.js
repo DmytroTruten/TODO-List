@@ -89,7 +89,13 @@ const deleteTodo = (event) => {
 const upperContainer = document.getElementById("upper");
 const toggleButton = document.getElementById("color-toggle");
 const colorPalette = document.getElementById("color-palette");
+const colorPicker = document.getElementById("color-picker");
 colorPalette.style.display = "none";
+
+colorPicker.addEventListener('input', () => {
+  let color = colorPicker.value;
+  upperContainer.style.backgroundColor = color;
+})
 
 const toggleColorContainer = () => {
   if (toggleButton.value === "off") {
