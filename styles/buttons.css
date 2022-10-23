@@ -81,6 +81,7 @@
 @media (min-width: 481px) and (max-width: 768px) {
   .add-button {
     grid-area: 2 / 2 / span 1 / span 2;
+    margin: 0;
   }
   .color-toggle {
     left: 10px;
