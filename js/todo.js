@@ -62,7 +62,7 @@ const saveTodos = () => {
 
 const saveColor = () => {
   localStorage.setItem("color", upperContainer.style.backgroundColor);
-}
+};
 
 // Controller
 const addTodo = () => {
@@ -72,8 +72,8 @@ const addTodo = () => {
     const datePicker = document.getElementById("date-picker");
     const dueDate = datePicker.value;
     createTodo(title, dueDate);
-    if(addTodo) {
-      textbox.value = '';
+    if (addTodo) {
+      textbox.value = "";
     }
     render();
   }
@@ -88,48 +88,26 @@ const deleteTodo = (event) => {
 
 const upperContainer = document.getElementById("upper");
 const toggleButton = document.getElementById("color-toggle");
-const colorPalette = document.getElementById("color-palette");
 const colorPicker = document.getElementById("color-picker");
-colorPalette.style.display = "none";
 
-colorPicker.addEventListener('input', () => {
+colorPicker.addEventListener("input", () => {
   let color = colorPicker.value;
   upperContainer.style.backgroundColor = color;
-})
+  saveColor();
+});
 
 const toggleColorContainer = () => {
   if (toggleButton.value === "off") {
     upperContainer.classList.toggle("reveal-colors");
     toggleButton.value = "on";
-    colorPalette.style.display = "grid";
   } else {
     upperContainer.classList.remove("reveal-colors");
     toggleButton.value = "off";
-    colorPalette.style.display = "none";
   }
 };
 
 const savedColor = localStorage.getItem("color");
 upperContainer.style.backgroundColor = savedColor;
-
-const colorButtons = colorPalette.querySelectorAll('div');
-colorButtons.forEach(function(div){
-  div.addEventListener('click', function(event) {
-    if(event.target.id === '#fff100' 
-    || event.target.id === '#ff8c00' 
-    || event.target.id === '#e81123'
-    || event.target.id === '#ec008c'
-    || event.target.id === '#68217a'
-    || event.target.id === '#00188f' 
-    || event.target.id === '#00bcf2'
-    || event.target.id === '#00b294'
-    || event.target.id === '#009e49'
-    || event.target.id === '#bad80a') {
-      upperContainer.style.backgroundColor = event.target.id;
-      saveColor()
-    }
-  })
-})
 
 // View
 const render = () => {

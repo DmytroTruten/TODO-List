@@ -27,17 +27,8 @@
       <input id="todo-title" type="text" placeholder="Enter your Todo" / maxlength="60">
       <input id="date-picker" type="date">
       <button class="add-button" onclick="addTodo()">Add New Todo</button>
-      <div class="color-palette" id="color-palette">
-        <div class="first" id="#fff100"></div>
-        <div class="second" id="#ff8c00"></div>
-        <div class="third" id="#e81123"></div>
-        <div class="fourth" id="#ec008c"></div>
-        <div class="fifth" id="#68217a"></div>
-        <div class="sixth" id="#00188f"></div>
-        <div class="seventh" id="#00bcf2"></div>
-        <div class="eighth" id="#00b294"></div>
-        <div class="nineth" id="#009e49"></div>
-        <div class="tenth" id="#bad80a"></div>
+      <div class="color-picker-container" id="color-picker-container">
+        <input type="color" id="color-picker">
       </div>
     </div>
     <div class="bottom-container">
@@ -45,9 +36,6 @@
         <img class="arrow-down" src="/TODO-List/images/Arrow-down.svg" alt="">
       </button>
       <div id="todo-list"></div>
-    </div>
-    <div class="color-picker">
-      <input type="color" id="color-picker">
     </div>
   </div>
   <script src="/TODO-List/js/todo.js"></script>
