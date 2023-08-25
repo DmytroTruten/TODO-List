@@ -1,44 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/TODO-List/styles/general.css">
-  <link rel="stylesheet" href="/TODO-List/styles/input.css">
-  <link rel="stylesheet" href="/TODO-List/styles/buttons.css">
-  <link rel="stylesheet" href="/TODO-List/styles/list.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-  <title>Document</title>
-</head>
-
-<body>
-  <div class="logo">
-    <p>TODO</p>
-  </div>
-  <div class="container">
-    <div class="upper-container" id="upper">
-      <input id="todo-title" type="text" placeholder="Enter your Todo" / maxlength="60">
-      <input id="date-picker" type="date">
-      <button class="add-button" onclick="addTodo()">Add New Todo</button>
-      <div class="color-picker-container" id="color-picker-container">
-        <input type="color" id="color-picker">
-      </div>
-    </div>
-    <div class="bottom-container">
-      <button class="color-toggle" value="off" id="color-toggle" onclick="toggleColorContainer()">
-        <img class="arrow-down" src="/TODO-List/images/Arrow-down.svg" alt="">
-      </button>
-      <div id="todo-list"></div>
-    </div>
-  </div>
-  <script src="/TODO-List/js/todo.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-Now</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
