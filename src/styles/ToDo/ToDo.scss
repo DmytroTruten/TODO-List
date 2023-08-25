@@ -1,0 +1,24 @@
+@import "../variables";
+
+.todo-container__todo {
+  width: clamp(0px, 100%, 740px) !important;
+  height: 44px;
+  border: 1px solid $lightgray;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.todo-container__add-todo {
+  width: clamp(0px, 100%, 740px) !important;
+  min-height: 44px;
+  border: 1px dashed $lightgray;
+  border-radius: 4px;
+}
+
+.form-check-input {
+  margin: 0 !important;
+}
+
+.add-todo__icon {
+  height: min-content;
+}

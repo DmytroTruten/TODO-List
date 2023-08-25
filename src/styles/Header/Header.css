@@ -1,0 +1,24 @@
+.header-container__header {
+  max-width: 500px !important;
+}
+
+.header__h1 {
+  white-space: nowrap;
+}
+
+.header__line {
+  width: 100%;
+  height: 2px;
+  background-color: #494949;
+}
+
+.divider-container {
+  gap: 32px;
+  max-width: 576px !important;
+}
+
+@media (min-width: 576px) {
+  .header__h1 {
+    font-size: 64px;
+  }
+}/*# sourceMappingURL=Header.css.map */

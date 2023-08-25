@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Racing+Sans+One&display=swap");
+
+html, body {
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Racing Sans One";
+  color: #494949;
+}
+
+.inner-root {
+  height: 100vh;
+  position: relative;
+}
+
+.inner-root__stripe {
+  position: absolute;
+  width: 50px;
+  height: 500px;
+  background-color: #999;
+  transform: rotate(-45deg);
+}
+
+.inner-root__stripe_top {
+  top: -220px;
+  right: 0;
+}
+
+.inner-root__stripe_bottom {
+  bottom: -220px;
+  left: 0;
+}
+
+.inner-root__theme-toggle {
+  position: absolute;
+  top: 0;
+}
+
+.todo-container {
+  max-height: 304px;
+  overflow-y: auto;
+  gap: 8px;
+}
+
+@media (min-width: 576px) {
+  .inner-root__stripe {
+    width: 100px;
+  }
+
+  .inner-root__stripe_top {
+    top: -200px;
+    right: 0;
+  }
+  
+  .inner-root__stripe_bottom {
+    bottom: -200px;
+    left: 0;
+  }
+
+  .inner-root__theme-toggle {
+    left: 10%;
+  }
+}

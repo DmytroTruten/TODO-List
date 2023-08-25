@@ -1,22 +1,26 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Container, Image } from "react-bootstrap";
+import Header from "./components/Header/Header";
+import { ToDo, AddToDo } from "./components/ToDo/ToDo";
+import ThemeToggle from "./assets/ThemeToggle.svg";
 
 function App() {
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-    </>
-  )
+    <Container fluid className="inner-root d-flex flex-column justify-content-center">
+      <span className="inner-root__stripe inner-root__stripe_top"></span>
+      <Image src={ThemeToggle} className="inner-root__theme-toggle"/>
+      <Header />
+      <Container className="todo-container d-flex flex-column px-0">
+        <ToDo />
+        <ToDo />
+        <ToDo />
+        <ToDo />
+        <ToDo />
+        <ToDo />
+        <AddToDo />
+      </Container>
+      <span className="inner-root__stripe inner-root__stripe_bottom"></span>
+    </Container>
+  );
 }
 
-export default App
+export default App;
