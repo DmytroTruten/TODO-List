@@ -8,6 +8,13 @@ h1 {
   color: #494949;
 }
 
+p {
+  color: #999;
+}
+
+.dark-theme body {
+  background-color: #222;
+}
 .dark-theme h1 {
   color: #fff;
 }
@@ -20,14 +27,21 @@ h1 {
 .dark-theme .header__line {
   background-color: #fff;
 }
-.dark-theme .inner-root {
-  background-color: #222;
-}
 .dark-theme .inner-root__stripe {
   background-color: #494949;
 }
 .dark-theme .inner-root__theme-toggle {
   filter: invert(100%) brightness(200%);
+}
+.dark-theme .todo-container__todo {
+  background-color: #222;
+  border-right: 1px solid #222;
+}
+.dark-theme .todo-container__todo.opened {
+  border-right: 1px solid #999;
+}
+.dark-theme .form-check-input {
+  background-color: transparent !important;
 }
 
 .inner-root {

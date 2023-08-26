@@ -10,7 +10,14 @@ h1 {
   color: #494949;
 }
 
+p {
+  color: $lightgray;
+}
+
 .dark-theme {
+  body {
+    background-color: $black;
+  }
   h1 {
     color: $white;
   }
@@ -23,14 +30,21 @@ h1 {
   .header__line {
     background-color: $white;
   }
-  .inner-root {
-    background-color: $black;
-  }
   .inner-root__stripe {
     background-color: $gray;
   }
   .inner-root__theme-toggle {
     filter: invert(100%) brightness(200%);
+  }
+  .todo-container__todo {
+    background-color: $black;
+    border-right: 1px solid $black;
+    &.opened {
+      border-right: 1px solid $lightgray;
+    }
+  }
+  .form-check-input {
+    background-color: transparent !important;
   }
 }
 

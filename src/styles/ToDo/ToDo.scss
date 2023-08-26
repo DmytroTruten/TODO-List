@@ -6,6 +6,12 @@
   border: 1px solid $lightgray;
   border-radius: 4px;
   padding: 12px;
+  border-right: 1px solid $white;
+  background-color: $white;
+  position: relative;
+  &.opened {
+    border-right: 1px solid $lightgray;
+  }
 }
 
 .todo-container__add-todo {
@@ -13,10 +19,34 @@
   min-height: 44px;
   border: 1px dashed $lightgray;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-.form-check-input {
-  margin: 0 !important;
+.todo__checkbox {
+  height: 16px !important;
+  width: 16px !important;
+  border: 1px solid $lightgray;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.todo__img-container {
+  transition: right 0.3s ease-in-out;
+  position: absolute;
+  right: 0;
+  &.opened {
+    right: -40px;
+  }
+}
+
+.todo__rectangle-icon {
+  cursor: pointer;
+  user-select: none;
+}
+.todo__drawer-icon {
+  position: relative;
+  z-index: -1;
+  user-select: none;
 }
 
 .add-todo__icon {

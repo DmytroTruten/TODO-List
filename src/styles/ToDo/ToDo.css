@@ -4,6 +4,12 @@
   border: 1px solid #999;
   border-radius: 4px;
   padding: 12px;
+  border-right: 1px solid #fff;
+  background-color: #fff;
+  position: relative;
+}
+.todo-container__todo.opened {
+  border-right: 1px solid #999;
 }
 
 .todo-container__add-todo {
@@ -11,10 +17,39 @@
   min-height: 44px;
   border: 1px dashed #999;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-.form-check-input {
-  margin: 0 !important;
+.todo__checkbox {
+  height: 16px !important;
+  width: 16px !important;
+  border: 1px solid #999;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.todo__img-container {
+  transition: right 0.3s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+.todo__img-container.opened {
+  right: -40px;
+}
+
+.todo__rectangle-icon {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.todo__drawer-icon {
+  position: relative;
+  z-index: -1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .add-todo__icon {
