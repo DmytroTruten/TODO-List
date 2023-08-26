@@ -10,19 +10,12 @@ h1 {
   color: #494949;
 }
 
-p {
-  color: $lightgray;
-}
-
 .dark-theme {
   body {
     background-color: $black;
   }
   h1 {
     color: $white;
-  }
-  p {
-    color: $lightgray;
   }
   .divider-container__note-pencil-icon {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7476%) hue-rotate(234deg) brightness(96%) contrast(104%);

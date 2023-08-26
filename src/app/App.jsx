@@ -1,12 +1,15 @@
 import { Container, Image } from "react-bootstrap";
-import Header from "./components/Header/Header";
-import { ToDo, AddToDo } from "./components/ToDo/ToDo";
-import ThemeToggle from "./assets/ThemeToggle.svg";
-import { ThemeArea, ThemeContext } from "./context/ThemeContext";
+import Header from "../components/Header/Header";
+import { AddToDo, ToDoItem } from "../components/ToDo/ToDo";
+import ThemeToggle from "../assets/ThemeToggle.svg";
+import { ThemeContext } from "../context/ThemeContext";
 import { useContext, useEffect } from "react";
+import { selectToDo } from "./ToDoSlice";
+import { useSelector } from "react-redux";
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext);
+  const todoList = useSelector(selectToDo);
 
   useEffect(() => {
     localStorage.setItem("to-do-now-theme", JSON.stringify(theme));
@@ -35,12 +38,9 @@ function App() {
       />
       <Header />
       <Container className="todo-container d-flex flex-column px-0">
-        <ToDo />
-        <ToDo />
-        <ToDo />
-        <ToDo />
-        <ToDo />
-        <ToDo />
+        {todoList.map((todo, index) => (
+          <ToDoItem key={index} index={index} />
+        ))}
         <AddToDo />
       </Container>
       <span className="inner-root__stripe inner-root__stripe_bottom"></span>

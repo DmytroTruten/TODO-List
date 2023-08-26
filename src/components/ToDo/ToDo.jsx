@@ -1,16 +1,31 @@
+import React, { useContext, useState } from "react";
 import { Container, Image } from "react-bootstrap";
+import { ThemeContext } from "../../context/ThemeContext";
 import PlusIcon from "../../assets/Plus.svg";
 import ToDoRectangleIcon from "../../assets/ToDoRectangle.svg";
 import ToDoRectangleDarkIcon from "../../assets/ToDoRectangleDark.svg";
 import DrawerIcon from "../../assets/Drawer.svg";
 import DrawerDarkIcon from "../../assets/DrawerDark.svg";
 import "../../styles/ToDo/ToDo.css";
-import { useContext, useState } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+import { createToDo, addToDo } from "../../app/ToDoSlice";
+import { useDispatch } from "react-redux";
 
-export function ToDo() {
+export function ToDoItem({index}) {
   const { theme } = useContext(ThemeContext);
   const [toDoRectangleOpened, setToDoRectangleOpened] = useState(false);
+  const [inputText, setInputText] = useState("");
+  const dispatch = useDispatch();
+
+  const handleInputTextChange = (e) => {
+    setInputText(e.target.value);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (inputText.trim() !== "") {
+      dispatch(addToDo({ index, text: inputText }));
+    }
+  };
 
   return (
     <Container
@@ -18,10 +33,19 @@ export function ToDo() {
         toDoRectangleOpened ? "opened" : ""
       }`}
     >
-      <div className="d-flex align-items-center">
+      <form
+        onSubmit={handleFormSubmit}
+        className="todo__form d-flex align-items-center"
+      >
         <input type="checkbox" className="todo__checkbox d-flex me-2" />
-        <p className="mb-0">Organize directory of downloads</p>
-      </div>
+        <input
+          type="text"
+          value={inputText}
+          onChange={handleInputTextChange}
+          className="todo__input-text"
+          autoFocus
+        />
+      </form>
       <div
         className={`todo__img-container ${toDoRectangleOpened ? "opened" : ""}`}
       >
@@ -40,8 +64,14 @@ export function ToDo() {
 }
 
 export function AddToDo() {
+  const dispatch = useDispatch();
   return (
-    <Container className="todo-container__add-todo d-flex justify-content-center align-items-center px-0">
+    <Container
+      className="todo-container__add-todo d-flex justify-content-center align-items-center px-0"
+      onClick={() => {
+        dispatch(createToDo());
+      }}
+    >
       <Image src={PlusIcon} className="add-todo__icon user-select-none" />
     </Container>
   );

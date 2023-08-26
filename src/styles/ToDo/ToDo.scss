@@ -30,6 +30,20 @@
   cursor: pointer;
 }
 
+.todo__form {
+  width: calc(100% - 20px);
+}
+
+.todo__input-text {
+  border: none;
+  width: 100%;
+  color: $lightgray;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
 .todo__img-container {
   transition: right 0.3s ease-in-out;
   position: absolute;
