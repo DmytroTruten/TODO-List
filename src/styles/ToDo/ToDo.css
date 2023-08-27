@@ -1,15 +1,13 @@
+@charset "UTF-8";
 .todo-container__todo {
   width: clamp(0px, 100%, 740px) !important;
   height: 44px;
   border: 1px solid #999;
   border-radius: 4px;
   padding: 12px;
-  border-right: 1px solid #fff;
+  border-right: none;
   background-color: #fff;
   position: relative;
-}
-.todo-container__todo.opened {
-  border-right: 1px solid #999;
 }
 
 .todo-container__add-todo {
@@ -21,11 +19,28 @@
 }
 
 .todo__checkbox {
-  height: 16px !important;
-  width: 16px !important;
+  height: 16px;
+  width: 16px;
   border: 1px solid #999;
   border-radius: 2px;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+.todo__checkbox:disabled {
+  background-color: #999;
+}
+
+.todo__checkbox_checked {
+  position: relative;
+}
+.todo__checkbox_checked::before {
+  content: "✓";
+  color: #999;
+  position: absolute;
+  right: 1px;
+  top: -5px;
 }
 
 .todo__form {

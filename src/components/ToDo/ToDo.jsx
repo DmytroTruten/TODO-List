@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { ThemeContext } from "../../context/ThemeContext";
 import PlusIcon from "../../assets/Plus.svg";
@@ -9,21 +9,40 @@ import DrawerDarkIcon from "../../assets/DrawerDark.svg";
 import "../../styles/ToDo/ToDo.css";
 import { createToDo, addToDo } from "../../app/ToDoSlice";
 import { useDispatch } from "react-redux";
+import Checkbox from "../Checkbox/Checkbox";
+import { useSelector } from "react-redux";
+import { selectToDo } from "../../app/ToDoSlice";
 
-export function ToDoItem({index}) {
-  const { theme } = useContext(ThemeContext);
+export function ToDoItem({ index }) {
   const [toDoRectangleOpened, setToDoRectangleOpened] = useState(false);
-  const [inputText, setInputText] = useState("");
+  const [isDisabled, setIsDisabled] = useState(true);
+  const { theme } = useContext(ThemeContext);
+  const inputRef = useRef(null);
   const dispatch = useDispatch();
+  const todoState = useSelector(selectToDo);
 
-  const handleInputTextChange = (e) => {
-    setInputText(e.target.value);
+  console.log("Todo state:", todoState[index]);
+
+  const handleChange = (e) => {
+    dispatch(addToDo({ index, text: e.target.value }));
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (inputText.trim() !== "") {
-      dispatch(addToDo({ index, text: inputText }));
+  const handleFocus = () => {
+    setIsDisabled(true);
+  };
+
+  const handleBlur = (e) => {
+    inputRef.current.blur();
+    if (e.target.value === "") {
+      setIsDisabled(true);
+    } else {
+      setIsDisabled(false);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleBlur(e);
     }
   };
 
@@ -33,19 +52,19 @@ export function ToDoItem({index}) {
         toDoRectangleOpened ? "opened" : ""
       }`}
     >
-      <form
-        onSubmit={handleFormSubmit}
-        className="todo__form d-flex align-items-center"
-      >
-        <input type="checkbox" className="todo__checkbox d-flex me-2" />
-        <input
-          type="text"
-          value={inputText}
-          onChange={handleInputTextChange}
-          className="todo__input-text"
-          autoFocus
-        />
-      </form>
+      <Checkbox isDisabled={isDisabled} index={index} />
+      <input
+        ref={inputRef}
+        type="text"
+        value={todoState[index].text}
+        onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
+        className="todo__input-text"
+        placeholder="Write your To-Do here..."
+        autoFocus
+      />
       <div
         className={`todo__img-container ${toDoRectangleOpened ? "opened" : ""}`}
       >

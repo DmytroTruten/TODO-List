@@ -6,12 +6,9 @@
   border: 1px solid $lightgray;
   border-radius: 4px;
   padding: 12px;
-  border-right: 1px solid $white;
+  border-right: none;
   background-color: $white;
   position: relative;
-  &.opened {
-    border-right: 1px solid $lightgray;
-  }
 }
 
 .todo-container__add-todo {
@@ -23,11 +20,27 @@
 }
 
 .todo__checkbox {
-  height: 16px !important;
-  width: 16px !important;
+  height: 16px;
+  width: 16px;
   border: 1px solid $lightgray;
   border-radius: 2px;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  &:disabled {
+    background-color: $lightgray;
+  }
+}
+
+.todo__checkbox_checked {
+  position: relative;
+  &::before {
+    content: "✓";
+    color: $lightgray;
+    position: absolute;
+    right: 1px;
+    top: -5px;
+  }
 }
 
 .todo__form {

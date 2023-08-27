@@ -28,10 +28,6 @@ h1 {
 }
 .dark-theme .todo-container__todo {
   background-color: #222;
-  border-right: 1px solid #222;
-}
-.dark-theme .todo-container__todo.opened {
-  border-right: 1px solid #999;
 }
 .dark-theme .form-check-input {
   background-color: transparent !important;
