@@ -1,24 +1,22 @@
-import { useState } from "react";
-import { DoneToDo } from "../../app/ToDoSlice";
-import { useDispatch } from "react-redux";
+import { DoneToDo, selectToDo } from "../../app/ToDoSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function Checkbox({isDisabled, index}) {
-  const [isChecked, setIsChecked] = useState(false);
+export default function Checkbox({ isCheckboxDisabled, index }) {
   const dispatch = useDispatch();
+  const todoState = useSelector(selectToDo);
 
   const handleCheck = () => {
-    setIsChecked(prev => !prev);
-    dispatch(DoneToDo({index}))
-  }
+    dispatch(DoneToDo({ index }));
+  };
 
   return (
     <input
       className={`todo__checkbox d-flex me-2 ${
-        isChecked ? "todo__checkbox_checked" : ""
+        todoState[index].done ? "todo__checkbox_checked" : ""
       }`}
       type="checkbox"
-      checked={isChecked}
-      disabled={isDisabled}
+      checked={todoState[index].done}
+      disabled={isCheckboxDisabled}
       onChange={handleCheck}
     />
   );

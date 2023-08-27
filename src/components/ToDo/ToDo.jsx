@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { ThemeContext } from "../../context/ThemeContext";
 import { createToDo, addToDo, deleteToDo } from "../../app/ToDoSlice";
@@ -14,66 +14,67 @@ import Checkbox from "../Checkbox/Checkbox";
 import "../../styles/ToDo/ToDo.css";
 
 export function ToDoItem({ index }) {
-  const [toDoRectangleOpened, setToDoRectangleOpened] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isCheckboxDisabled, setIsCheckboxDisabled] = useState(true);
   const { theme } = useContext(ThemeContext);
   const inputRef = useRef(null);
+  const toDoItemRef = useRef(null);
   const dispatch = useDispatch();
   const todoState = useSelector(selectToDo);
 
   console.log("Todo state:", todoState);
 
+  useEffect(() => {
+    setIsCheckboxDisabled(todoState[index].text === "");
+  }, [todoState[index].text]);
+
+  useEffect(() => {
+    const handleInputBlur = () => {
+      toDoItemRef.current.classList =
+        "todo-container__todo d-flex align-items-center pe-0";
+    };
+    const handleInputFocus = () => {
+      toDoItemRef.current.classList =
+        "todo-container__todo todo-container__todo_focused d-flex align-items-center pe-0";
+    };
+    const inputElement = inputRef.current;
+    if (inputElement) {
+      inputElement.addEventListener("blur", handleInputBlur);
+      inputElement.addEventListener("focus", handleInputFocus);
+    }
+
+    return () => {
+      if (inputElement) {
+        inputElement.removeEventListener("blur", handleInputBlur);
+        inputElement.removeEventListener("focus", handleInputFocus);
+      }
+    };
+  }, []);
+
   const handleInputChange = (e) => {
     dispatch(addToDo({ index, text: e.target.value }));
   };
 
-  const handleInputFocus = () => {
-    setIsDisabled(true);
-  };
-
-  const handleInputBlur = (e) => {
-    inputRef.current.blur();
-    if (e.target.value === "") {
-      setIsDisabled(true);
-    } else {
-      setIsDisabled(false);
-    }
-  };
-
-  const handleInputKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleInputBlur(e);
-    }
-  };
-
   const handleToDoDelete = () => {
-    if (toDoRectangleOpened) {
-      dispatch(deleteToDo({ index }));
-    }
+    dispatch(deleteToDo({ index }));
   };
 
   return (
     <Container
-      className={`todo-container__todo d-flex align-items-center justify-content-between pe-0 ${
-        toDoRectangleOpened ? "opened" : ""
-      }`}
+      className="todo-container__todo d-flex align-items-center pe-0"
+      ref={toDoItemRef}
     >
-      <Checkbox isDisabled={isDisabled} index={index} />
+      <Checkbox isCheckboxDisabled={isCheckboxDisabled} index={index} />
       <input
-        ref={inputRef}
         type="text"
-        value={todoState[index].text}
-        onChange={handleInputChange}
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        onKeyDown={handleInputKeyDown}
         className="todo__input-text"
         placeholder="Write your To-Do here..."
+        ref={inputRef}
+        value={todoState[index].text}
+        onChange={handleInputChange}
+        disabled={todoState[index].done}
         autoFocus
       />
-      <div
-        className={`todo__img-container ${toDoRectangleOpened ? "opened" : ""}`}
-      >
+      <div className="todo__img-container">
         <label
           className="todo__drawer-label"
           htmlFor="todo__drawer"
@@ -88,7 +89,6 @@ export function ToDoItem({ index }) {
         <Image
           src={theme === "light" ? ToDoRectangleIcon : ToDoRectangleDarkIcon}
           className="todo__rectangle-icon"
-          onClick={() => setToDoRectangleOpened((prev) => !prev)}
         />
       </div>
     </Container>

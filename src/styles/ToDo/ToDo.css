@@ -5,9 +5,18 @@
   border: 1px solid #999;
   border-radius: 4px;
   padding: 12px;
-  border-right: none;
   background-color: #fff;
   position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.todo-container__todo.todo-container__todo_focused {
+  box-shadow: 0px 0px 5px 0px #999;
+}
+.todo-container__todo:hover .todo__img-container {
+  right: -40px;
+}
+.todo-container__todo:hover .todo__img-container .todo__drawer-label {
+  cursor: pointer;
 }
 
 .todo-container__add-todo {
@@ -16,6 +25,7 @@
   border: 1px dashed #999;
   border-radius: 4px;
   cursor: pointer;
+  transition: border-style 0.3s ease-in-out;
 }
 
 .todo__checkbox {
@@ -43,11 +53,8 @@
   top: -5px;
 }
 
-.todo__form {
-  width: calc(100% - 20px);
-}
-
 .todo__input-text {
+  width: calc(100% - 40px) !important;
   border: none;
   width: 100%;
   color: #999;
@@ -56,17 +63,14 @@
 .todo__input-text:focus {
   outline: none;
 }
+.todo__input-text:disabled {
+  text-decoration: line-through;
+}
 
 .todo__img-container {
   transition: right 0.3s ease-in-out;
   position: absolute;
   right: 0;
-}
-.todo__img-container.opened {
-  right: -40px;
-}
-.todo__img-container.opened .todo__drawer-label {
-  cursor: pointer;
 }
 
 .todo__rectangle-icon {
@@ -74,6 +78,13 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  position: relative;
+  right: -1px;
+}
+
+.todo__drawer-label {
+  position: relative;
+  right: -1px;
 }
 
 .todo__drawer-icon {

@@ -6,9 +6,20 @@
   border: 1px solid $lightgray;
   border-radius: 4px;
   padding: 12px;
-  border-right: none;
   background-color: $white;
   position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+  &.todo-container__todo_focused {
+    box-shadow: 0px 0px 5px 0px $lightgray;
+  }
+  &:hover {
+    .todo__img-container {
+      right: -40px;
+      .todo__drawer-label {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .todo-container__add-todo {
@@ -17,6 +28,7 @@
   border: 1px dashed $lightgray;
   border-radius: 4px;
   cursor: pointer;
+  transition: border-style 0.3s ease-in-out;
 }
 
 .todo__checkbox {
@@ -43,11 +55,8 @@
   }
 }
 
-.todo__form {
-  width: calc(100% - 20px);
-}
-
 .todo__input-text {
+  width: calc(100% - 40px) !important;
   border: none;
   width: 100%;
   color: $lightgray;
@@ -55,23 +64,27 @@
   &:focus {
     outline: none;
   }
+  &:disabled {
+    text-decoration: line-through;
+  }
 }
 
 .todo__img-container {
   transition: right 0.3s ease-in-out;
   position: absolute;
   right: 0;
-  &.opened {
-    right: -40px;
-    .todo__drawer-label {
-      cursor: pointer;
-    }
-  }
 }
 
 .todo__rectangle-icon {
   cursor: pointer;
   user-select: none;
+  position: relative;
+  right: -1px;
+}
+
+.todo__drawer-label {
+  position: relative;
+  right: -1px;
 }
 
 .todo__drawer-icon {

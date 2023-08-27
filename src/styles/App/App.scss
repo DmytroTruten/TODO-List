@@ -70,6 +70,20 @@ h1 {
   max-height: 304px;
   overflow-y: auto;
   gap: 8px;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    box-shadow: inset 0px 0px 5px $lightgray;
+  }
+   
+  &::-webkit-scrollbar-thumb {
+    background-color: $lightgray;
+    border-radius: 4px;
+  }
 }
 
 @media (min-width: 576px) {

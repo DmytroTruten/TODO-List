@@ -67,6 +67,17 @@ h1 {
   overflow-y: auto;
   gap: 8px;
 }
+.todo-container::-webkit-scrollbar {
+  width: 7px;
+}
+.todo-container::-webkit-scrollbar-track {
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 5px #999;
+}
+.todo-container::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+}
 
 @media (min-width: 576px) {
   .inner-root__stripe {

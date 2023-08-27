@@ -38,7 +38,7 @@ function App() {
         onClick={handleSwitchTheme}
       />
       <Header />
-      <Container className="todo-container d-flex flex-column px-0">
+      <Container className="todo-container d-flex flex-column align-items-center px-0 py-2">
         {todoList.map((todo, index) => (
           <ToDoItem key={index} index={index} />
         ))}
