@@ -10,10 +10,13 @@ import "../styles/App/App.css";
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext);
-  const todoList = useSelector(selectToDo);
+  const toDoList = useSelector(selectToDo);
+  const savedToDoList = JSON.parse(localStorage.getItem("todo-list")).todo
+    .toDoListState;
+  console.log(savedToDoList);
 
   useEffect(() => {
-    localStorage.setItem("to-do-now-theme", JSON.stringify(theme));
+    localStorage.setItem("todo-now-theme", JSON.stringify(theme));
     if (theme === "dark") {
       document.documentElement.classList.add("dark-theme");
     } else {
@@ -39,7 +42,7 @@ function App() {
       />
       <Header />
       <Container className="todo-container d-flex flex-column align-items-center px-0 py-2">
-        {todoList.map((todo, index) => (
+        {savedToDoList.map((todo, index) => (
           <ToDoItem key={index} index={index} />
         ))}
         <AddToDo />
