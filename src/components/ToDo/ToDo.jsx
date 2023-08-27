@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { ThemeContext } from "../../context/ThemeContext";
+import { createToDo, addToDo, deleteToDo } from "../../app/ToDoSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { selectToDo } from "../../app/ToDoSlice";
 import PlusIcon from "../../assets/Plus.svg";
 import ToDoRectangleIcon from "../../assets/ToDoRectangle.svg";
 import ToDoRectangleDarkIcon from "../../assets/ToDoRectangleDark.svg";
 import DrawerIcon from "../../assets/Drawer.svg";
 import DrawerDarkIcon from "../../assets/DrawerDark.svg";
-import "../../styles/ToDo/ToDo.css";
-import { createToDo, addToDo } from "../../app/ToDoSlice";
-import { useDispatch } from "react-redux";
 import Checkbox from "../Checkbox/Checkbox";
-import { useSelector } from "react-redux";
-import { selectToDo } from "../../app/ToDoSlice";
+import "../../styles/ToDo/ToDo.css";
 
 export function ToDoItem({ index }) {
   const [toDoRectangleOpened, setToDoRectangleOpened] = useState(false);
@@ -21,17 +21,17 @@ export function ToDoItem({ index }) {
   const dispatch = useDispatch();
   const todoState = useSelector(selectToDo);
 
-  console.log("Todo state:", todoState[index]);
+  console.log("Todo state:", todoState);
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     dispatch(addToDo({ index, text: e.target.value }));
   };
 
-  const handleFocus = () => {
+  const handleInputFocus = () => {
     setIsDisabled(true);
   };
 
-  const handleBlur = (e) => {
+  const handleInputBlur = (e) => {
     inputRef.current.blur();
     if (e.target.value === "") {
       setIsDisabled(true);
@@ -40,9 +40,15 @@ export function ToDoItem({ index }) {
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleInputKeyDown = (e) => {
     if (e.key === "Enter") {
-      handleBlur(e);
+      handleInputBlur(e);
+    }
+  };
+
+  const handleToDoDelete = () => {
+    if (toDoRectangleOpened) {
+      dispatch(deleteToDo({ index }));
     }
   };
 
@@ -57,10 +63,10 @@ export function ToDoItem({ index }) {
         ref={inputRef}
         type="text"
         value={todoState[index].text}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
+        onChange={handleInputChange}
+        onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
+        onKeyDown={handleInputKeyDown}
         className="todo__input-text"
         placeholder="Write your To-Do here..."
         autoFocus
@@ -68,10 +74,17 @@ export function ToDoItem({ index }) {
       <div
         className={`todo__img-container ${toDoRectangleOpened ? "opened" : ""}`}
       >
-        <Image
-          src={theme === "light" ? DrawerIcon : DrawerDarkIcon}
-          className="todo__drawer-icon"
-        />
+        <label
+          className="todo__drawer-label"
+          htmlFor="todo__drawer"
+          onClick={handleToDoDelete}
+        >
+          <Image
+            src={theme === "light" ? DrawerIcon : DrawerDarkIcon}
+            className="todo__drawer-icon"
+            id="todo__drawer"
+          />
+        </label>
         <Image
           src={theme === "light" ? ToDoRectangleIcon : ToDoRectangleDarkIcon}
           className="todo__rectangle-icon"

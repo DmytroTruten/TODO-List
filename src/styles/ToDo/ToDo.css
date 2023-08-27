@@ -65,6 +65,9 @@
 .todo__img-container.opened {
   right: -40px;
 }
+.todo__img-container.opened .todo__drawer-label {
+  cursor: pointer;
+}
 
 .todo__rectangle-icon {
   cursor: pointer;

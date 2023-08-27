@@ -15,7 +15,7 @@ export const toDoSlice = createSlice({
       state.toDoListState[index] = {
         ...state.toDoListState[index],
         text,
-        done: false, // Додайте властивість done
+        done: false,
       };
       console.log("add");
     },
@@ -27,11 +27,18 @@ export const toDoSlice = createSlice({
       };
       console.log("done");
     },
+    deleteToDo: (state, action) => {
+      const { index } = action.payload;
+      state.toDoListState = state.toDoListState.filter(
+        (_, idx) => idx !== index
+      );
+      console.log("delete", index);
+    },
   },
 });
 
 export const selectToDo = (state) => state.todo.toDoListState;
 
-export const { createToDo, addToDo, DoneToDo } = toDoSlice.actions;
+export const { createToDo, addToDo, DoneToDo, deleteToDo } = toDoSlice.actions;
 
 export default toDoSlice.reducer;

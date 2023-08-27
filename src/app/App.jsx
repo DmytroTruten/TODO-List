@@ -6,6 +6,7 @@ import { ThemeContext } from "../context/ThemeContext";
 import { useContext, useEffect } from "react";
 import { selectToDo } from "./ToDoSlice";
 import { useSelector } from "react-redux";
+import "../styles/App/App.css";
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext);

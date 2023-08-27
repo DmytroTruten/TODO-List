@@ -63,6 +63,9 @@
   right: 0;
   &.opened {
     right: -40px;
+    .todo__drawer-label {
+      cursor: pointer;
+    }
   }
 }
 
@@ -70,6 +73,7 @@
   cursor: pointer;
   user-select: none;
 }
+
 .todo__drawer-icon {
   position: relative;
   z-index: -1;
