@@ -8,7 +8,6 @@ export const toDoSlice = createSlice({
   reducers: {
     createToDo: (state) => {
       state.toDoListState.push({ text: "", done: false });
-      console.log("create");
     },
     addToDo: (state, action) => {
       const { index, text } = action.payload;
@@ -17,7 +16,6 @@ export const toDoSlice = createSlice({
         text,
         done: false,
       };
-      console.log("add");
     },
     DoneToDo: (state, action) => {
       const { index } = action.payload;
@@ -25,14 +23,12 @@ export const toDoSlice = createSlice({
         ...state.toDoListState[index],
         done: !state.toDoListState[index].done,
       };
-      console.log("done");
     },
     deleteToDo: (state, action) => {
       const { index } = action.payload;
       state.toDoListState = state.toDoListState.filter(
         (_, idx) => idx !== index
       );
-      console.log("delete", index);
     },
   },
 });

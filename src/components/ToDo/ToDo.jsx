@@ -15,6 +15,7 @@ import "../../styles/ToDo/ToDo.css";
 
 export function ToDoItem({ index }) {
   const [isCheckboxDisabled, setIsCheckboxDisabled] = useState(true);
+  const [isToDoItemHovered, setIsToDoItemHovered] = useState(false);
   const { theme } = useContext(ThemeContext);
   const inputRef = useRef(null);
   const toDoItemRef = useRef(null);
@@ -55,13 +56,15 @@ export function ToDoItem({ index }) {
   };
 
   const handleToDoDelete = () => {
-    dispatch(deleteToDo({ index }));
+    isToDoItemHovered ? dispatch(deleteToDo({ index })) : null;
   };
 
   return (
     <Container
       className="todo-container__todo d-flex align-items-center pe-0"
       ref={toDoItemRef}
+      onMouseEnter={() => setIsToDoItemHovered((prev) => !prev)}
+      onMouseLeave={() => setIsToDoItemHovered((prev) => !prev)}
     >
       <Checkbox isCheckboxDisabled={isCheckboxDisabled} index={index} />
       <input
