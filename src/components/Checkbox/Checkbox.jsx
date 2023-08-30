@@ -1,4 +1,4 @@
-import { DoneToDo, selectToDo } from "../../app/ToDoSlice";
+import { doneToDo, selectToDo } from "../../app/ToDoSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Checkbox({ isCheckboxDisabled, index }) {
@@ -6,7 +6,7 @@ export default function Checkbox({ isCheckboxDisabled, index }) {
   const todoState = useSelector(selectToDo);
 
   const handleCheck = () => {
-    dispatch(DoneToDo({ index }));
+    dispatch(doneToDo({ index }));
   };
 
   return (

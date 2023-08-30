@@ -1,19 +1,19 @@
-import { Container, Image } from "react-bootstrap";
+import { Button, Container, Image } from "react-bootstrap";
 import Header from "../components/Header/Header";
 import { AddToDo, ToDoItem } from "../components/ToDo/ToDo";
 import ThemeToggle from "../assets/ThemeToggle.svg";
 import { ThemeContext } from "../context/ThemeContext";
 import { useContext, useEffect } from "react";
-import { selectToDo } from "./ToDoSlice";
-import { useSelector } from "react-redux";
+import { selectToDo, deleteAllToDo } from "./ToDoSlice";
+import { useDispatch, useSelector } from "react-redux";
 import "../styles/App/App.css";
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext);
-  const toDoList = useSelector(selectToDo);
+  const toDoState = useSelector(selectToDo);
+  const dispatch = useDispatch();
   const savedToDoList = JSON.parse(localStorage.getItem("todo-list")).todo
     .toDoListState;
-  console.log(savedToDoList);
 
   useEffect(() => {
     localStorage.setItem("todo-now-theme", JSON.stringify(theme));
@@ -27,6 +27,10 @@ function App() {
   const handleSwitchTheme = () => {
     const savedTheme = theme === "dark" ? "light" : "dark";
     setTheme(savedTheme);
+  };
+
+  const handleDeleteAllToDo = () => {
+    dispatch(deleteAllToDo());
   };
 
   return (
@@ -46,6 +50,9 @@ function App() {
           <ToDoItem key={index} index={index} />
         ))}
         <AddToDo />
+        {toDoState.length !== 0 && (
+          <Button className="todo-container__delete-all-btn mt-4" onClick={handleDeleteAllToDo}>Delete all To-Do's</Button>
+        )}
       </Container>
       <span className="inner-root__stripe inner-root__stripe_bottom"></span>
     </Container>

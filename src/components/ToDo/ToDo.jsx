@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { ThemeContext } from "../../context/ThemeContext";
-import { createToDo, addToDo, deleteToDo } from "../../app/ToDoSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { selectToDo } from "../../app/ToDoSlice";
+import {
+  createToDo,
+  addToDo,
+  deleteToDo,
+  selectToDo,
+} from "../../app/ToDoSlice";
 import PlusIcon from "../../assets/Plus.svg";
 import ToDoRectangleIcon from "../../assets/ToDoRectangle.svg";
 import ToDoRectangleDarkIcon from "../../assets/ToDoRectangleDark.svg";

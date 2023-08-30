@@ -79,6 +79,11 @@ h1 {
   border-radius: 4px;
 }
 
+.todo-container__delete-all-btn {
+  background-color: #999 !important;
+  border: none !important;
+}
+
 @media (min-width: 576px) {
   .inner-root__stripe {
     width: 100px;
