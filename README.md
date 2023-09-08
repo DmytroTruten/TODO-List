@@ -41,6 +41,3 @@ The project employs Local Storage to preserve the task list's state between sess
 
 This provides just a basic overview of the project and its capabilities. You can add more features, enhance the design, and expand the capabilities of this application. Best of luck with your development!
 
----
-
-Please remember to adapt the repository URL and username according to your details. Also, you can add more sections or information if required for your project.
