@@ -39,5 +39,3 @@ This project is a web application that serves as a ToDo List, helping you manage
 
 The project employs Local Storage to preserve the task list's state between sessions. The task state is automatically saved to Local Storage upon updates or tab closure. Upon the next launch, the previous task state will be retrieved to continue work.
 
-This provides just a basic overview of the project and its capabilities. You can add more features, enhance the design, and expand the capabilities of this application. Best of luck with your development!
-
